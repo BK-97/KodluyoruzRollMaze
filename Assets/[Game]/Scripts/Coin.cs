@@ -12,11 +12,16 @@ public class Coin : MonoBehaviour
     private void OnDestroy()
     {
         CoinManager.Instance.RemoveCoin(this);
+        
     }
     public void PickUpCoin(int point)
     {
         EventManager.onCoinPickUp.Invoke();
         Destroy(gameObject);
+    }
+    void Update()
+    {
+        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
     }
 
 }

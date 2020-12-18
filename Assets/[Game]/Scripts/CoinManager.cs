@@ -24,6 +24,7 @@ public class CoinManager : Singleton<CoinManager>
         if(Coins.Count==0)
         {
             EventManager.onGameOver.Invoke();
+            
         }
     }
 }

@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 950821420}
   - component: {fileID: 950821419}
   m_Layer: 0
-  m_Name: "In\u0131tManager"
+  m_Name: InitManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
