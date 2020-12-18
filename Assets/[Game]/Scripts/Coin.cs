@@ -3,26 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Coin : MonoBehaviour
+public class Coin : CollectableBase
 {
-    private void Start()
+    private void Awake()
     {
        CoinManager.Instance.AddCoin(this);
     }
     private void OnDestroy()
     {
         CoinManager.Instance.RemoveCoin(this);
-        
     }
-    public void PickUpCoin(int point)
+
+    public override void Collect()
     {
-        EventManager.onCoinPickUp.Invoke();
-        Destroy(gameObject);
+        base.Collect();
+        Use();
     }
     void Update()
     {
         transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
     }
-
+    public override void Use()
+    {
+        EventManager.onCoinPickUp.Invoke(1);
+        Dispose();
+    }
 }
  

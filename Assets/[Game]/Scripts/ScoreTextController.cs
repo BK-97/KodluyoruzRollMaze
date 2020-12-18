@@ -20,7 +20,7 @@ public class ScoreTextController : MonoBehaviour
     }
     private void Start()
     {
-        UpdateScoreText();
+        UpdateScoreText(0);
     }
     //When the object is activated
     private void OnEnable()
@@ -32,9 +32,9 @@ public class ScoreTextController : MonoBehaviour
     {
         EventManager.onCoinPickUp.RemoveListener(UpdateScoreText);
     }
-    private void UpdateScoreText()
+    private void UpdateScoreText(int amount)
     {
-        int point = FindObjectOfType<Player>().point;
-        ScoreText.text = "Score = " + point;
+        int coin = CoinManager.Instance.Coin;
+        ScoreText.text = "Score = " + coin;
     }
 }

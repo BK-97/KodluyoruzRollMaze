@@ -25,8 +25,6 @@ public class Player : MonoBehaviour
 
     public float MoveSpeed;
 
-    public int point;
-
     private void FixedUpdate()
     {
         Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -38,11 +36,10 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Coin coin = other.GetComponent<Coin>();
-        if (coin != null)
+        ICollectable collectable = other.GetComponent<ICollectable>();
+        if (collectable != null) 
         {
-            point += 1* GameManager.Instance.LevelCoinMultiplier;
-            coin.PickUpCoin(point);
+            collectable.Collect();
         }
     }
     public int damage;

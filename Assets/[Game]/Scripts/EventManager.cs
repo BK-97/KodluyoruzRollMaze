@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 public static class EventManager
 {
-    public static UnityEvent onCoinPickUp = new UnityEvent();
+    public static CoinEvent onCoinPickUp = new CoinEvent();
     public static UnityEvent onGameOver = new UnityEvent();
 }
+
+public class CoinEvent: UnityEvent<int> { }
    
