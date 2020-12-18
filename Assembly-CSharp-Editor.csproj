@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\[Game]\Scripts\Editor\PlayerEditor.cs" />
-    <Compile Include="Assets\[Game]\Scripts\Editor\Setgame.cs" />
+    <Compile Include="Assets\[Game]\Scripts\Editor\SetGame.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
